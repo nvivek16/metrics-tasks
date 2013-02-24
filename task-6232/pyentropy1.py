@@ -147,9 +147,10 @@ def run(file_name):
             bw_as[router.as_no] += router.bandwidth
         else:
             bw_as[router.as_no] = router.bandwidth
-    print relay_countries["US"]
     if total_bw == 0:
-        return
+        return 
+    #cutoff bandwidth is the 50% of the total bandwidth.I have sorted the relays in each countries based on their bandwidth    
+    #i am finding out the how much % of relays in each country can control 50% of each country's total bandwidth
     for  country in relay_countries.keys():
          cutoff_bandwidth = bw_countries[country]/2
          no_of_routers = 0
